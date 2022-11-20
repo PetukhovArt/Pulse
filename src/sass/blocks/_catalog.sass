@@ -37,7 +37,7 @@
         display: flex
         flex-wrap: wrap
         display: none
-        gap: 10px
+        justify-content: space-between
         &_active
             display: flex
     &-item
@@ -47,7 +47,7 @@
         background: #FFFFFF
         border: 2px solid #E8E8E8
         overflow: hidden
-        margin-bottom: 10px
+        margin-bottom: 20px
         &__img
             display: block
             margin: 0 auto
@@ -139,3 +139,39 @@
                 color:$main-color
             li
                 margin-top: 3px
+
+@media (max-width:768px)
+    .catalog
+        &__content
+            justify-content: space-evenly
+
+@media (max-width:576px)
+    .catalog
+        &__tab
+            width: 140px
+            height: 40px
+            font-weight: 400
+            font-size: 14px
+            line-height: 15px
+
+@media (max-width:320px)
+    .catalog
+        &__content
+            margin-top: 30px
+        &__tabs
+            margin-top: 50px
+        &__tab
+            width: 90px
+            height: 30px
+            font-weight: 300
+            font-size: 10px
+            line-height: 12px
+        &-item
+            width: 270px
+            min-height: 400px
+            padding: 10px
+            margin-bottom: 15px
+            &__price
+                font-size: 17px
+            &__footer
+                justify-content: space-evenly

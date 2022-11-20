@@ -32,3 +32,40 @@
             height: 169px
             display: block
             margin: 0 auto
+
+@media (max-width:768px)
+    .reviews
+        padding: 0px 30px 48px 30px
+        &__item
+            text-align: justify
+        &__descr
+            margin-left: 40px
+
+@media (max-width:576px)
+    .reviews
+        &__about
+            font-size: 12px
+            line-height: 20px
+            span
+                font-size: 12px
+                margin-top: 10px
+        &__item
+            img
+                height: 130px
+
+@media (max-width:320px)
+    .reviews
+        &__subtitle
+            margin-top: 20px
+            text-align: center
+        &__about
+            line-height: 17px
+        &__item
+            margin-top: 30px
+            flex-direction: column
+            text-align: justify
+            justify-content: center
+            img
+                height: 100px
+        &__descr
+            margin: 0 auto
