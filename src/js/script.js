@@ -1,3 +1,4 @@
+    //Слайдер (слик)
 $(document).ready(function(){
     $('.slider__inner').slick({
         lazyLoad: 'ondemand',
@@ -17,13 +18,13 @@ $(document).ready(function(){
             }
         ]
         });
-
+    //Табы переключение контента
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
             .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
-
+    //Описание итема в каталоге появление/скрытие
     function toggleSlide(item) {
         $(item).each(function(i) {
             $(this).on('click', function(e) {
@@ -36,8 +37,7 @@ $(document).ready(function(){
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
-    //Modal
-
+    //Модальные окна появление/скрытие
     $('[data-modal=consultation]').on('click', function() {
         $('.overlay, #consultation').fadeIn('slow');
     });
@@ -53,6 +53,7 @@ $(document).ready(function(){
         })
     });
 
+/*валидация заполнения форм*/
     function valideForms(form) {
         $(form).validate({
             rules: {
@@ -73,8 +74,8 @@ $(document).ready(function(){
             messages: {
                 name: 'Введите ваше ФИО',
                 phone: {
-                    required: 'Введите ваш номер в формате +7 ...',
-                    minlength: jQuery.validator.format("Введите {12} цифр!")
+                    required: 'Введите ваш номер',
+                    minlength: jQuery.validator.format('Введите {12} цифр!')
                 },
                 email: 'Введите почту в формате name@domain.com'
             }
@@ -84,4 +85,6 @@ $(document).ready(function(){
     valideForms('#consultation form');
     valideForms('#consultation-form');
     valideForms('#order form');
+/*маска ввода номера телефона*/
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 });
