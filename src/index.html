@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
@@ -18,7 +19,7 @@
 
 <body>
 
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <div class="header__logo">
@@ -65,19 +66,19 @@
             <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
             <div class="benefits__wrapper">
                 <div class="benefits__item">
-                    <img src="icons/cup.png" alt="cup">
+                    <img id="cup" src="icons/cup.png" alt="cup">
                     <h3>Делимся опытом</h3>
                     <span>Наши сотрудники всегда готовы поделиться своим опытом,так как сами бегают полумарафоны,
                         переплыли Босфор, готовятся к соревнованиям по триатлону!</span>
                 </div>
                 <div class="benefits__item">
-                    <img src="icons/heart.png" alt="heart">
+                    <img id="heart" src="icons/heart.png" alt="heart">
                     <h3>Заботимся о здоровье</h3>
                     <span>Мы работаем для того,чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость
                         Вам и Вашим близким!</span>
                 </div>
                 <div class="benefits__item">
-                    <img src="icons/shoe.png" alt="shoe">
+                    <img id="shoe" src="icons/shoe.png" alt="shoe">
                     <h3>Учим бегать</h3>
                     <span>Помогаем с обучениемправильной технике бега!Дружим с крупнейшей школой бега в России - <a
                             href="#">I LOVE RUNNING.</a></span>
@@ -432,7 +433,7 @@
         </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews animate__animated animate__rotateInDownRight animate__slow animate__delay-1s">
         <div class="container">
             <div class="title">отзывы клиентов</div>
             <div class="reviews__item">
@@ -541,8 +542,11 @@
             <div class="modal__subtitle modal__subtitle_mini">Спасибо за вашу заявку!</div>
             <div class="modal__descr modal__descr_mini">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
-
     </div>
+
+    <a id="#up" href="#" class="pageup">
+        <img src="icons/circle-up.svg" alt="circle-up">
+    </a>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

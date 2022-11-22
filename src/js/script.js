@@ -1,4 +1,4 @@
-    //Слайдер (слик)
+    //Slick Slider
 $(document).ready(function(){
     $('.slider__inner').slick({
         lazyLoad: 'ondemand',
@@ -18,7 +18,7 @@ $(document).ready(function(){
             }
         ]
         });
-    //Табы переключение контента
+    //tabs
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
             .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
@@ -37,7 +37,7 @@ $(document).ready(function(){
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
 
-    //Модальные окна появление/скрытие
+    //modal windows
     $('[data-modal=consultation]').on('click', function() {
         $('.overlay, #consultation').fadeIn('slow');
     });
@@ -53,7 +53,7 @@ $(document).ready(function(){
         })
     });
 
-/*валидация заполнения форм*/
+//validation forms
     function valideForms(form) {
         $(form).validate({
             rules: {
@@ -85,6 +85,42 @@ $(document).ready(function(){
     valideForms('#consultation form');
     valideForms('#consultation-form');
     valideForms('#order form');
-/*маска ввода номера телефона*/
+//phone mask
     $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+//email receive (ajax(php))
+    $('form').submit(function(e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('#thanks').fadeIn('slow');
+            $('form').trigger('reset');
+        });
+        return false;
+    });
+
+//Smooth scroll and page up
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    $("a[href^='#']").click(function(){
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
 });
