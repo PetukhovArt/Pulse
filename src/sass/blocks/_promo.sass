@@ -1,7 +1,7 @@
 .promo
     min-height: 650px
     padding: 21px 0 93px 0
-    background: url(../img/bg/bg_intro.png) center (center/cover) no-repeat
+    background: url(../img/bg_intro.webp) center (center/cover) no-repeat
     &__wrapper
         display: flex
         margin-top: 91px
@@ -24,14 +24,14 @@
         margin-top: 60px
         display: flex
         justify-content: space-between
-        width: 425px
+        flex-wrap: wrap
         img
             display: block
             margin: 0 auto
             margin-bottom: 20px
     &__icon
         color: white
-        width: 105px
+        max-width: 105px
         font-size: 14px
         line-height: 14px
         text-align: center
@@ -68,20 +68,6 @@
     .promo
         min-height: 550px
         padding-bottom: 50px
-        background-position-x: +25%
-        &__header
-            font-size: 30px
-        &__subheader
-            font-size: 18px
-        &__icons
-            margin-top: 40px
-        &__icon
-            font-size: 12px
-        &__link
-            font-size: 13px
-
-@media (max-width:320px)
-    .promo
         background-position-x: +35%
         &__wrapper
             margin-top: 35px
@@ -92,13 +78,15 @@
             font-size: 16px
             text-align: center
         &__icons
-            margin-top: 30px
+            margin-top: 20px
             justify-content: center
             img
                 display: block
                 margin-bottom: 10px
         &__icon
+            margin-top: 10px
             font-size: 11px
-            width: 95px
             line-height: 14px
             text-align: center
+        &__link
+            font-size: 13px
