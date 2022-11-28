@@ -70,4 +70,9 @@ gulp.task('css', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images','css'));
+gulp.task('js', function() {
+    return gulp.src("src/js/**/*")
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images','css','js'));

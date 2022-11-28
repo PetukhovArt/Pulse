@@ -7,8 +7,8 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 2500,
         focusOnSelect: true,
-        prevArrow:'<button type="button" class="slick-prev"><img src="icons/arrow_left.svg"></button>',
-        nextArrow:'<button type="button" class="slick-next"><img src="icons/arrow_right.svg"></button>',
+        prevArrow:'<button aria-label="sliderArrow" type="button" class="slick-prev"><img alt="arrow" src="icons/arrow_left.svg"></button>',
+        nextArrow:'<button aria-label="sliderArrow" type="button" class="slick-next"><img alt="arrow" src="icons/arrow_right.svg"></button>',
         responsive:[
             {
                 breakpoint: 992,
